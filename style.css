@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+}
+header{
+    overflow: auto;
+    background: darkcyan;
+    padding: 2.3vw 1vw;
+}
+
+h1{
+    text-align: center;
+    size: 2vw;
+}
+
+body{
+    background: blanchedalmond;
+}
+
+main{
+    margin: 1em;
+    display: flex;
+    flex-direction: row;
+}
+
+footer{
+    text-align: justify;
+    letter-spacing: 1px;
+    height: auto;
+    margin-top: 1em;
+    padding: 1em;
+    background: black;
+    color: white;
+    box-shadow: 0 0 5px 2px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+}
+
+#s1 { grid-area: 1 / 1 / 2 / 2; }
+#s2 { grid-area: 1 / 2 / 2 / 3; }
+#s3 { grid-area: 2 / 1 / 3 / 2; }
+#s4 { grid-area: 2 / 2 / 3 / 3; }
+
+footer section{
+    margin: 1.3em;
+    padding: 1em;
+    background-color: #301c1c;
+    border-radius: 0.3em;
+    box-shadow: 0 0 5px 2px;
+}
+
+.art{
+    height: 35vw;
+}
+
+p{
+    text-align: justify;
+    margin-top: 1em;
+}
+
+h2{
+    margin-block: 0.7em;
+}
+
+.description{
+    font-family: "Book Antiqua";
+}
+
+.column{
+    width: 50%;
+}
+
+.form{
+    padding: 1em 3em;
+    border: #301c1c solid;
+    border-radius: 1.5em;
+}
+
+.form input{
+    width: 100%;
+}
+
+input{
+    background: lightslategray;
+    border-style: none;
+    border-radius: 0.4em;
+    height: 2em;
+}
+
+button{
+    margin: 1em 0;
+}
+
+#с1{
+    padding-right: 1.5em;
+}
