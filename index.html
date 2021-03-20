@@ -26,23 +26,78 @@
         </p>
     </div>
     <div class="column">
-        <form action="/action_page.php" class="form">
-            <h2>Форма обратной связи</h2>
-            Ваше имя:<br>
-            <input type="text" name="name" value="">
-            <br>
-            E-mail адрес:<br>
-            <input type="text" name="email" value="">
-            Тема сообщения:<br>
-            <input type="text" name="subject" value="">
-            <br>
-            Текст сообщения:<br>
-            <input type="text" name="message" value="">
-            <br><br>
-            <button type="submit" class="button submit send" name="submit" value="send">
-                Отправить
-            </button>
-        </form>
+        <div id="root"></div>
+
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+        <script type="text/babel">
+
+            class ManagedComponent extends React.Component {
+                constructor(props){
+                    super(props);
+
+                    this.state = { fname: '',
+                        email: '',
+                        subject: '',
+                        message: ''
+                    };
+
+                    this.handleChangeName = this.handleChangeName.bind(this);
+                    this.handleChangeEmail = this.handleChangeEmail.bind(this);
+                    this.handleChangeSubject = this.handleChangeSubject.bind(this);
+                    this.handleChangeMessage = this.handleChangeMessage.bind(this);
+                    this.handleSubmit = this.handleSubmit.bind(this);
+                }
+
+                handleSubmit(event){
+                    alert(this.state.fname + ", копия Вашего сообщения с темой " + this.state.subject + " отправлена на почту: " + this.state.email);
+                    event.preventDefault();
+                }
+
+                handleChangeName(event){
+                    console.log('старое значение имени: ' + this.state.fname + '  новое значение имени: ' + event.target.value);
+                    this.setState({ fname: event.target.value});
+                }
+
+                handleChangeEmail(event){
+                    console.log('старое значение почты: ' + this.state.email + '  новое значение почты: ' + event.target.value);
+                    this.setState({ email: event.target.value });
+                }
+
+                handleChangeSubject(event){
+                    console.log('старое значение: ' + this.state.subject + '  новое значение: ' + event.target.value);
+                    this.setState({ subject: event.target.value });
+                }
+
+                handleChangeMessage(event){
+                    console.log("Изменение текста сообщения")
+                    this.setState({ message: event.target.value });
+                }
+                render() {
+                    return (
+                        <form action="/action_page.php" class="form" onSubmit={this.handleSubmit}>
+                            <h2>Форма обратной связи</h2>
+                            <h6>Ваше имя:</h6>
+                            <input name="name" value={this.state.fname} onChange={this.handleChangeName} />
+                            <h6>E-mail адрес:</h6>
+                            <input name="email" value={this.state.email} onChange={this.handleChangeEmail} />
+                            <h6>Тема сообщения:</h6>
+                            <input name="subject" value={this.state.subject} onChange={this.handleChangeSubject} />
+                            <h6>Текст сообщения:</h6>
+                            <input name="message" value={this.state.message} onChange={this.handleChangeMessage} />
+                            <div> </div>
+                            <button type="submit" className="button submit send" name="submit" value="send" onChange={this.handleSubmit}>
+                                Отправить
+                            </button>
+                        </form>
+                    );
+                }
+            }
+
+            ReactDOM.render(<ManagedComponent />, document.getElementById("root"));
+
+        </script>
     </div>
 </main>
 
