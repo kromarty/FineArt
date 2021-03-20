@@ -25,52 +25,24 @@
             Эта картина является своеобразным символом скоротечности и относительности временного пространства. Как это ни парадоксально, но идея написания этой картины пришла к художнику, когда он размышлял о плавленом сыре. Вот такой он, Сальвадор Дали…
         </p>
     </div>
-
-    <div class="column" id="с2">
-        <div class="form">
+    <div class="column">
+        <form action="/action_page.php" class="form">
             <h2>Форма обратной связи</h2>
-            <form action="/form/fake/address=1">
-                <div class="pages">
-                    <div class="shift type-text">
-                        <label class="label required">
-                            Ваше имя:
-                        </label>
-                        <div class="unit">
-                            <input type="text" class="text required" value="">
-                        </div>
-                    </div>
-                    <div class="shift type-email">
-                        <label class="label required">
-                            E-mail адрес:
-                        </label>
-                        <div  class="unit">
-                            <input type="email" class="text email required" value="">
-                        </div>
-                    </div>
-                    <div class="shift type-text">
-                        <label class="label required">
-                            Тема сообщения:
-                        </label>
-                        <div  class="unit">
-                            <input type="text" class="text required" value="">
-                        </div>
-                    </div>
-                    <div class="shift type-textarea">
-                        <label class="label required">
-                            Текст сообщения:
-                        </label>
-                        <div  class="unit">
-                            <input type="text" class="text required" value="">
-                        </div>
-                    </div>
-                    <div class="shift btn">
-                        <button type="submit" class="button submit send" name="submit" value="send">
-                            Отправить
-                        </button>
-                    </div>
-                </div>
-            </form>
-        </div>
+            Ваше имя:<br>
+            <input type="text" name="name" value="">
+            <br>
+            E-mail адрес:<br>
+            <input type="text" name="email" value="">
+            Тема сообщения:<br>
+            <input type="text" name="subject" value="">
+            <br>
+            Текст сообщения:<br>
+            <input type="text" name="message" value="">
+            <br><br>
+            <button type="submit" class="button submit send" name="submit" value="send">
+                Отправить
+            </button>
+        </form>
     </div>
 </main>
 
