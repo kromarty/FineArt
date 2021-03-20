@@ -79,13 +79,13 @@
                         <form action="/action_page.php" class="form" onSubmit={this.handleSubmit}>
                             <h2>Форма обратной связи</h2>
                             <h6>Ваше имя:</h6>
-                            <input name="name" value={this.state.fname} onChange={this.handleChangeName} />
+                            <input type="text" maxLength="255" data-validatelengthrange="0,255" name="name" value={this.state.fname} onChange={this.handleChangeName} />
                             <h6>E-mail адрес:</h6>
-                            <input name="email" value={this.state.email} onChange={this.handleChangeEmail} />
+                            <input type="email" name="email" value={this.state.email} onChange={this.handleChangeEmail} />
                             <h6>Тема сообщения:</h6>
-                            <input name="subject" value={this.state.subject} onChange={this.handleChangeSubject} />
+                            <input type="text" maxLength="255" data-validatelengthrange="0,255" name="subject" value={this.state.subject} onChange={this.handleChangeSubject} />
                             <h6>Текст сообщения:</h6>
-                            <input name="message" value={this.state.message} onChange={this.handleChangeMessage} />
+                            <input type="text" maxLength="255" data-validatelengthrange="0,255" name="message" value={this.state.message} onChange={this.handleChangeMessage} />
                             <div> </div>
                             <button type="submit" className="button submit send" name="submit" value="send" onChange={this.handleSubmit}>
                                 Отправить
